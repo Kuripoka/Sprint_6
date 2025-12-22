@@ -1,4 +1,3 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 # Шаг 1: Данные клиента
@@ -14,7 +13,7 @@ NEXT_BUTTON = (By.XPATH, "//button[text()='Далее']")
 # Шаг 2: Детали заказа
 DATE_INPUT = (By.XPATH, "//input[@placeholder='* Когда привезти самокат']")
 RENT_DURATION_DROPDOWN = (By.XPATH, "//div[@class='Dropdown-placeholder' and text()='* Срок аренды']")
-RENT_DURATION_ONE_DAY = RENT_DURATION_ONE_DAY = (By.XPATH, "//div[contains(@class,'Dropdown-option') and normalize-space()='сутки']")
+RENT_DURATION_ONE_DAY = (By.XPATH, "//div[contains(@class,'Dropdown-option') and normalize-space()='сутки']")
 RENT_DURATION_TWO_DAYS = (By.XPATH, "//div[contains(@class,'Dropdown-option') and normalize-space()='двое суток']")
 COLOR_CHECKBOX_BLACK = (By.ID, "black")
 COLOR_CHECKBOX_GREY = (By.ID, "grey")

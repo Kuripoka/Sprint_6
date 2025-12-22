@@ -1,9 +1,7 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 ORDER_BUTTON_HEADER = (By.CSS_SELECTOR, ".Header_Nav__AGCXC > button:nth-child(1)")
 ORDER_BUTTON_PAGE = (By.CSS_SELECTOR, ".Button_Middle__1CSJM")
-COOKIE_ACCEPT_BUTTON = (By.ID, "rcc-confirm-button")
 
 FAQ1_PRICE_QUESTION = (By.ID, "accordion__heading-0")
 FAQ2_SEVERAL_SCOOTERS_QUESTION = (By.ID, "accordion__heading-1")

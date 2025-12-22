@@ -16,15 +16,8 @@ FAQ_TEST_DATA = [
 
 @pytest.mark.parametrize("question_locator, answer_locator, faq_number", FAQ_TEST_DATA)
 def test_faq_answers(driver, question_locator, answer_locator, faq_number):
-    if faq_number == 1:
-        page = MainPage(driver)
-        page.scroll_to_faq_section()
-        test_faq_answers.page = page
-    else:
-        page = test_faq_answers.page
-
+    page = MainPage(driver)
+    page.accept_cookies()
     page.click_faq_question(question_locator)
-    answer_text = page.get_faq_answer_text(answer_locator)
-
-    expected_text = FAQ_ANSWERS[faq_number]
-    assert expected_text in answer_text
+    answer_text = page.get_faq_answer(answer_locator)
+    assert FAQ_ANSWERS[faq_number] in answer_text

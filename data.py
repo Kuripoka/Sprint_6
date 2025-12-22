@@ -1,8 +1,11 @@
 from locators.order_page_locators import METRO_STATION_CHRKZ, METRO_STATION_PREOBR_SQR, COLOR_CHECKBOX_BLACK, COLOR_CHECKBOX_GREY, RENT_DURATION_ONE_DAY, RENT_DURATION_TWO_DAYS
-from locators.main_page_locators import ORDER_BUTTON_HEADER, ORDER_BUTTON_PAGE
 
+class urls:
+    SCOOTER_URL = "https://qa-scooter.praktikum-services.ru/"
+    DZEN_URL = "https://dzen.ru/"
 
-URL = "https://qa-scooter.praktikum-services.ru/"
+class Config: 
+    DEFAULT_TIMEOUT = 10
 
 FAQ_ANSWERS = {
     1: "Сутки — 400 рублей. Оплата курьеру — наличными или картой.",
@@ -16,7 +19,6 @@ FAQ_ANSWERS = {
 }
 
 CLIENT_DATA_1 = {
-    "entry_point": ORDER_BUTTON_HEADER,
     "first_name": "Иван",
     "last_name": "Иванов",
     "address": "Москва, ул. Черкизовская, 1",
@@ -29,7 +31,6 @@ CLIENT_DATA_1 = {
 }
 
 CLIENT_DATA_2 = {
-    "entry_point": ORDER_BUTTON_PAGE,
     "first_name": "Пётр",
     "last_name": "Петров",
     "address": "Москва, Преображенская площадь, д. 10",

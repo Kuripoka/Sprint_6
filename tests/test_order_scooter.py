@@ -1,8 +1,7 @@
 import pytest
 from pages.main_page import MainPage
 from pages.order_page import OrderPage
-from locators.main_page_locators import *
-from locators.order_page_locators import *
+from locators.order_page_locators import SUCCESS_MODAL_WINDOW
 from data import CLIENT_DATA_1, CLIENT_DATA_2
 
 CLIENT_DATASETS = [
@@ -15,7 +14,6 @@ def test_order_creation(driver, client_data, dataset_number):
     main_page = MainPage(driver)
     main_page.accept_cookies()
     if dataset_number > 1:
-        main_page.scroll_to_order_button_in_page()
         main_page.click_order_button_in_page()
     else:
         main_page.click_order_button_header()
@@ -32,6 +30,6 @@ def test_order_creation(driver, client_data, dataset_number):
     order_page.fill_comment(client_data["comment"])
     order_page.click_order_button()
     order_page.click_confirm_order_button()
-    assert "Заказ оформлен" in driver.find_element(*SUCCESS_MODAL_WINDOW).text
+    assert "Заказ оформлен" in order_page.wait_and_find_element(SUCCESS_MODAL_WINDOW).text
     order_page.click_check_order_status_button()
     order_page.click_scooter_logo()
