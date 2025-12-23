@@ -14,10 +14,11 @@ FAQ_TEST_DATA = [
     (FAQ8_BEYOND_MKAD_QUESTION, FAQ8_BEYOND_MKAD_ANSWER, 8),
 ]
 
-@pytest.mark.parametrize("question_locator, answer_locator, faq_number", FAQ_TEST_DATA)
-def test_faq_answers(driver, question_locator, answer_locator, faq_number):
-    page = MainPage(driver)
-    page.accept_cookies()
-    page.click_faq_question(question_locator)
-    answer_text = page.get_faq_answer(answer_locator)
-    assert FAQ_ANSWERS[faq_number] in answer_text
+class TestFAQ:
+    @pytest.mark.parametrize("question_locator, answer_locator, faq_number", FAQ_TEST_DATA)
+    def test_faq_answers(self, driver, question_locator, answer_locator, faq_number):
+        page = MainPage(driver)
+        page.accept_cookies()
+        page.click_faq_question(question_locator)
+        answer_text = page.get_faq_answer(answer_locator)
+        assert FAQ_ANSWERS[faq_number] in answer_text
